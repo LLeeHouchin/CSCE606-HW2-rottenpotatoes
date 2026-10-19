@@ -1,4 +1,6 @@
 <!-- This is the index page -->
+<!--<link rel="stylesheet" href="app/assets/stylesheets/movie_table.css">-->
+
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Movies" %>
@@ -12,17 +14,11 @@
           <td class="new_record_link" colspan="6"><%= link_to "New movie", new_movie_path %></td>
         </tr>
         <tr class="th_row">
-          <!--<th class="col_headers">Title</th>
-          <th class="col_headers">Release Date</th>
-          <th class="col_headers">Rating</th>
-          <th class="col_headers">Description</th>
-          <th class="col_headers">Last Updated</th>
-          <th class="col_headers">Show</th>-->
-          <th><%= sort_link('title', 'Title') %></th>
-          <th><%= sort_link('rating', 'Rating') %></th>
+          <th class="col_headers"><%= sort_link('title', 'Title') %></th>
+          <th class="col_headers"><%= sort_link('rating', 'Rating') %></th>
           <th class="col_headers">Description
-          <th><%= sort_link('release_date', 'Release Date') %></th>
-          <th><%= sort_link('updated_at', 'Last Updated') %></th>
+          <th class="col_headers"><%= sort_link('release_date', 'Release Date') %></th>
+          <th class="col_headers"><%= sort_link('updated_at', 'Last Updated') %></th>
           <th class="col_headers">Show</th>
         </tr>
       </thead>
