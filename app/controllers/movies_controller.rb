@@ -1,9 +1,20 @@
 class MoviesController < ApplicationController
+
   before_action :set_movie, only: %i[ show edit update destroy ]
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    # The following establishes order the records are displayed in the output.
+    # Reference: DuckDuckGo AI
+    # Search Term:In Rails, how do you sort a table by column?
+
+    column = params[:column] || 'title'     # Default column if none provided
+    direction = params[:direction] || 'asc' # Default direction if none provided
+
+    @movies = Movie.order("#{column} #{direction}")
+
+    # Rails generated code
+    # @movies = Movie.all
   end
 
   # GET /movies/1 or /movies/1.json

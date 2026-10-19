@@ -12,11 +12,17 @@
           <td class="new_record_link" colspan="6"><%= link_to "New movie", new_movie_path %></td>
         </tr>
         <tr class="th_row">
-          <th class="col_headers">Title</th>
+          <!--<th class="col_headers">Title</th>
           <th class="col_headers">Release Date</th>
           <th class="col_headers">Rating</th>
           <th class="col_headers">Description</th>
           <th class="col_headers">Last Updated</th>
+          <th class="col_headers">Show</th>-->
+          <th><%= sort_link('title', 'Title') %></th>
+          <th><%= sort_link('rating', 'Rating') %></th>
+          <th class="col_headers">Description
+          <th><%= sort_link('release_date', 'Release Date') %></th>
+          <th><%= sort_link('updated_at', 'Last Updated') %></th>
           <th class="col_headers">Show</th>
         </tr>
       </thead>
@@ -24,9 +30,9 @@
         <tr>
           <% @movies.each do |movie| %>
           <td class="first_column"><%= movie.title %></td>
-          <td class="center_td"><%= movie.release_date %></td>
           <td class="center_td"><%= movie.rating %></td>
-          <td><%= movie.description %></td>
+          <td><%= movie.description %>
+          <td class="center_td"><%= movie.release_date %></td>
           <td class="center_td"><%= movie.updated_at%></td>
           <td class="center_td"><%= link_to "Link", movie %></td>
         </tr>
