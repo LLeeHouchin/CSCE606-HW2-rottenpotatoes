@@ -11,8 +11,9 @@
     <table>
       <thead>
         <tr>
-          <td class="new_record_link"git  colspan="5"><%= link_to "Reset sorting", movies_path %></td>
-          <td class="new_record_link"><%= link_to "New movie", new_movie_path %></td>
+          <td class="new_record_link" colspan="6">
+            <%= link_to "Reset sorting", movies_path %> |
+            <%= link_to "New movie", new_movie_path %></td>
         </tr>
         <tr class="th_row">
           <th class="<%= 'sorted-column' if @sort_column == 'title' %> col_headers">
