@@ -30,6 +30,6 @@ td{
     text-wrap: wrap;
     font-size: 12pt;
 }
-.highlight {
-    background-color: #dedede; /* Change to your desired highlight color */
+.sorted-column {
+    background-color: #fff2a8;
 }

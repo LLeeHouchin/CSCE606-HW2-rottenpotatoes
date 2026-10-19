@@ -11,26 +11,38 @@
     <table>
       <thead>
         <tr>
-          <td class="new_record_link" colspan="6"><%= link_to "New movie", new_movie_path %></td>
+          <td class="new_record_link"git  colspan="5"><%= link_to "Reset sorting", movies_path %></td>
+          <td class="new_record_link"><%= link_to "New movie", new_movie_path %></td>
         </tr>
         <tr class="th_row">
-          <th class="col_headers"><%= sort_link('title', 'Title') %></th>
-          <th class="col_headers"><%= sort_link('rating', 'Rating') %></th>
+          <th class="<%= 'sorted-column' if @sort_column == 'title' %> col_headers">
+            <%= sort_link("title", "Title") %> </th>
+          <th class="<%= 'sorted-column' if @sort_column == 'rating' %> col_headers">
+            <%= sort_link("rating", "Rating") %> </th>
           <th class="col_headers">Description
-          <th class="col_headers"><%= sort_link('release_date', 'Release Date') %></th>
-          <th class="col_headers"><%= sort_link('updated_at', 'Last Updated') %></th>
+          <th class="<%= 'sorted-column' if @sort_column == 'release_date' %> col_headers">
+            <%= sort_link("release_date", "Release date") %>
+          </th>
+          <th class="<%= 'sorted-column' if @sort_column == 'updated_at' %> col_headers">
+            <%= sort_link("updated_at", "Last Updated") %>
+          </th>
           <th class="col_headers">Show</th>
         </tr>
+        </th>
       </thead>
       <tbody>
         <tr>
           <% @movies.each do |movie| %>
-          <td class="first_column"><%= movie.title %></td>
-          <td class="center_td"><%= movie.rating %></td>
+            <td class="<%= 'sorted-column' if @sort_column == 'title' %>"><%= movie.title %></td>
+            <td class="<%= 'sorted-column' if @sort_column == 'rating' %>"><%= movie.rating %></td>
           <td><%= movie.description %>
-          <td class="center_td"><%= movie.release_date %></td>
-          <td class="center_td"><%= movie.updated_at%></td>
+            <td class="<%= 'sorted-column' if @sort_column == 'release_date' %>"><%= movie.release_date %></td>
+            <td class="<%= 'sorted-column' if @sort_column == 'updated_at' %>"><%= movie.updated_at %></td>
           <td class="center_td"><%= link_to "Link", movie %></td>
+<!--<td class="first_column"><%#= movie.title %></td>-->
+<!--<td class="center_td"><%#= movie.rating %></td>-->
+<!--<td class="center_td"><%#= movie.release_date %></td>          -->
+<!--<td class="center_td"><%#= movie.updated_at%></td>-->
         </tr>
         <% end %>
       </tbody>

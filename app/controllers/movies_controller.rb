@@ -4,14 +4,22 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
+    allowed_columns = %w[title rating release_date updated_at]
+    column = allowed_columns.include?(params[:column]) ? params[:column] : "title"
+    direction = params[:direction] == "desc" ? "desc" : "asc"
+
+    @sort_column = column
+    @sort_direction = direction
+    @movies = Movie.order(column => direction)
+
     # The following establishes order the records are displayed in the output.
     # Reference: DuckDuckGo AI
     # Search Term:In Rails, how do you sort a table by column?
-
-    column = params[:column] || 'title'     # Default column if none provided
-    direction = params[:direction] || 'asc' # Default direction if none provided
-
-    @movies = Movie.order("#{column} #{direction}")
+    #
+    # column = params[:column] || 'title'     # Default column if none provided
+    # direction = params[:direction] || 'asc' # Default direction if none provided
+    #
+    # @movies = Movie.order("#{column} #{direction}")
 
     # Rails generated code
     # @movies = Movie.all
