@@ -8,3 +8,37 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+    background-color: #F5DEC7;
+}
+table{
+    font-size:14pt;
+    /*width:100%;*/
+}
+td {
+    border: 1px groove black;
+}
+.new_record_link{
+    text-align: right;
+    border: 0px groove black;
+}
+.col_headers{
+    font-weight: bold;
+    text-align: center;
+    border: 3px groove black;
+    border-style:
+}
+.center_td{
+    text-align: center;
+}
+td{
+    padding:10px;
+}
+.first_column{
+    font-weight: bold;
+}
+.description_column{
+    text-wrap: wrap;
+    font-size: 12pt;
+}
