@@ -40,14 +40,17 @@
             <td class="<%= 'sorted-column' if @sort_column == 'release_date' %>"><%= movie.release_date %></td>
             <td class="<%= 'sorted-column' if @sort_column == 'updated_at' %>"><%= movie.updated_at %></td>
           <td class="center_td"><%= link_to "Link", movie %></td>
-<!--<td class="first_column"><%#= movie.title %></td>-->
-<!--<td class="center_td"><%#= movie.rating %></td>-->
-<!--<td class="center_td"><%#= movie.release_date %></td>          -->
-<!--<td class="center_td"><%#= movie.updated_at%></td>-->
         </tr>
         <% end %>
       </tbody>
     </table>
 </div>
-
+<div class="footer">
+  <p>
+  This webpage was created to satify CSCE 606 section 700 (Software Engineering) Homework Assignment #2: Hello Rails!
+  </p>
+  <p>
+  This work was authored by Lee Houchin, graduate student at Texas A&M Universtiy for the Fall 2026 semester.
+  </p>
+</div>
 
